@@ -20,6 +20,10 @@ Write a function that checks if two given strings are anagrams.
         True
 """
 
+###################################################
+# Solution 1
+###################################################
+
 def are_anagrams(str1, str2):
     # If lengths of both strings are not the same, they cannot be anagrams
     if len(str1) != len(str2):
@@ -37,6 +41,25 @@ def are_anagrams(str1, str2):
 
     # Compare character counts
     return char_count1 == char_count2
+
+# Example usage
+print(are_anagrams("listen", "silent"))  # Output: True
+print(are_anagrams("hello", "world"))    # Output: False
+print(are_anagrams("triangle", "integral"))  # Output: True
+print(are_anagrams("evil", "vile"))  # Output: True
+
+
+###################################################
+# Solution 2
+###################################################
+
+def are_anagrams(str1, str2):
+    # If lengths of both strings are not the same, they cannot be anagrams
+    if len(str1) != len(str2):
+        return False
+
+    # Sort both strings and compare
+    return sorted(str1) == sorted(str2)
 
 # Example usage
 print(are_anagrams("listen", "silent"))  # Output: True
